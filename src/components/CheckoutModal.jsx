@@ -1,5 +1,5 @@
-import { useCart } from '../context/CartContext'
-import { useState } from 'react'
+import { useCart } from "../context/CartContext";
+import { useState } from "react";
 
 const CheckoutModal = ({ isOpen, onClose, onOrderPlaced }) => {
   const { clearCart } = useCart();
@@ -19,7 +19,8 @@ const CheckoutModal = ({ isOpen, onClose, onOrderPlaced }) => {
     }
 
     clearCart();
-    onOrderPlaced(); // ✅ Call the parent function
+    onOrderPlaced(); // ✅ Trigger success toast
+    onClose(); // ✅ Close modal
     setForm({ name: "", email: "", address: "" });
     setError("");
   };
@@ -109,4 +110,4 @@ const CheckoutModal = ({ isOpen, onClose, onOrderPlaced }) => {
   );
 };
 
-export default CheckoutModal
+export default CheckoutModal;

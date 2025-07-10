@@ -8,10 +8,8 @@ const CartSidebar = ({ isOpen, onClose }) => {
   const [showSuccess, setShowSuccess] = useState(false);
 
   const handleOrderPlaced = () => {
-    setShowCheckout(false);
     setShowSuccess(true);
-
-    
+    setShowCheckout(false);
     setTimeout(() => setShowSuccess(false), 2000);
   };
 
@@ -94,14 +92,10 @@ const CartSidebar = ({ isOpen, onClose }) => {
         onOrderPlaced={handleOrderPlaced}
       />
 
-      {/* Success Modal */}
+      {/* ✅ Success Toast Notification */}
       {showSuccess && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 shadow-xl text-center">
-            <p className="text-green-600 font-semibold text-lg">
-              ✅ Order placed successfully!
-            </p>
-          </div>
+        <div className="fixed top-4 right-4 bg-green-600 text-white px-4 py-2 rounded shadow-md animate-slide-in z-[9999]">
+          ✅ Order placed successfully!
         </div>
       )}
     </>
