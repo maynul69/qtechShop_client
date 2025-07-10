@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "title": "Recliner Chair Wood",
+      "price": "299.00",
+      "image": "/image/chair.png",
+      "description": "High Back Rocking Side Pocket Portable Folding Outdoor Camping Chairs",
+      "category": "Rocking chair"
+    },
+    {
+      "id": 2,
+      "title": "Timber Ride Padded",
+      "price": "60.00",
+      "image": "/image/chair1.png",
+      "description": "High Back Rocking Side Pocket Portable Folding Outdoor Camping Chairs",
+      "category": "Rocking chair"
+    },
+    {
+      "id": 3,
+      "title": "Timber Ride Padded",
+      "price": "59.00",
+      "image": "/image/chair2.png",
+      "description": "High Back Rocking Side Pocket Portable Folding Outdoor Camping Chairs",
+      "category": "Lounge chair"
+    },
+    {
+      "id": 4,
+      "title": "Timber Ride Padded",
+      "price": "59.00",
+      "image": "/image/chair3.png",
+      "description": "High Back Rocking Side Pocket Portable Folding Outdoor Camping Chairs",
+      "category": "Rocking chair"
+    },
+    {
+      "id": 5,
+      "title": "Timber Ride Padded",
+      "price": "59.00",
+      "image": "/image/chair4.png",
+      "description": "High Back Rocking Side Pocket Portable Folding Outdoor Camping Chairs",
+      "category": "Side chair"
+    },
+    {
+      "id": 6,
+      "title": "Timber Ride Padded",
+      "price": "59.00",
+      "image": "/image/chair5.png",
+      "description": "High Back Rocking Side Pocket Portable Folding Outdoor Camping Chairs",
+      "category": "Side chair"
+    }
+  ]
+  
