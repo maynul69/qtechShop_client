@@ -2,7 +2,8 @@ import { useCart } from "../context/CartContext";
 import { useState } from "react";
 
 const CheckoutModal = ({ isOpen, onClose, onOrderPlaced }) => {
-  const { clearCart } = useCart();
+  const { cartItems, clearCart } = useCart();
+
   const [form, setForm] = useState({ name: "", email: "", address: "" });
   const [error, setError] = useState("");
 
@@ -11,18 +12,24 @@ const CheckoutModal = ({ isOpen, onClose, onOrderPlaced }) => {
   };
 
   const handleSubmit = (e) => {
+
     e.preventDefault();
 
+    console.log("Form submitted:", form);
+    console.log("Order placed:", cartItems);
+    
     if (!form.name || !form.email || !form.address) {
       setError("Please fill in all fields.");
       return;
     }
 
     clearCart();
-    onOrderPlaced(); // ✅ Trigger success toast
+    onOrderPlaced(); 
     onClose(); // ✅ Close modal
     setForm({ name: "", email: "", address: "" });
     setError("");
+   // ✅ Trigger success toast
+
   };
 
   if (!isOpen) return null;

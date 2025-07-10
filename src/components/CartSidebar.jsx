@@ -31,47 +31,55 @@ const CartSidebar = ({ isOpen, onClose }) => {
         </div>
 
         <div className="p-4 space-y-4 overflow-y-auto h-[calc(100%-160px)]">
-          {cartItems.length === 0 && (
-            <p className="text-gray-500">Cart is empty.</p>
-          )}
-          {cartItems.map((item) => (
-            <div
-              key={item.id}
-              className="flex gap-3 items-center border-b pb-2"
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-14 h-14 object-cover rounded"
-              />
-              <div className="flex-1">
-                <h3 className="font-medium text-sm">{item.title}</h3>
-                <p className="text-xs text-gray-600">
-                  ${item.price} × {item.quantity}
-                </p>
-                <div className="flex gap-2 mt-1">
-                  <button
-                    onClick={() => updateQuantity(item.id, -1)}
-                    className="px-2 text-sm bg-gray-200 rounded"
-                  >
-                    −
-                  </button>
-                  <button
-                    onClick={() => updateQuantity(item.id, 1)}
-                    className="px-2 text-sm bg-gray-200 rounded"
-                  >
-                    +
-                  </button>
-                  <button
-                    onClick={() => removeFromCart(item.id)}
-                    className="text-red-500 text-sm ml-auto"
-                  >
-                    Remove
-                  </button>
+          {cartItems.length === 0 ? (
+            <>
+              <p className="text-gray-500">Cart is empty.</p>
+              {showSuccess && (
+                <div className="mt-2 bg-green-600 text-white px-4 py-2 rounded shadow-md animate-slide-in">
+                  ✅ Order placed successfully!
+                </div>
+              )}
+            </>
+          ) : (
+            cartItems.map((item) => (
+              <div
+                key={item.id}
+                className="flex gap-3 items-center border-b pb-2"
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-14 h-14 object-cover rounded"
+                />
+                <div className="flex-1">
+                  <h3 className="font-medium text-sm">{item.title}</h3>
+                  <p className="text-xs text-gray-600">
+                    ${item.price} × {item.quantity}
+                  </p>
+                  <div className="flex gap-2 mt-1">
+                    <button
+                      onClick={() => updateQuantity(item.id, -1)}
+                      className="px-2 text-sm bg-gray-200 rounded"
+                    >
+                      −
+                    </button>
+                    <button
+                      onClick={() => updateQuantity(item.id, 1)}
+                      className="px-2 text-sm bg-gray-200 rounded"
+                    >
+                      +
+                    </button>
+                    <button
+                      onClick={() => removeFromCart(item.id)}
+                      className="text-red-500 text-sm ml-auto"
+                    >
+                      Remove
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
 
         <div className="p-4 border-t">
@@ -91,13 +99,6 @@ const CartSidebar = ({ isOpen, onClose }) => {
         onClose={() => setShowCheckout(false)}
         onOrderPlaced={handleOrderPlaced}
       />
-
-      {/* ✅ Success Toast Notification */}
-      {showSuccess && (
-        <div className="fixed top-4 right-4 bg-green-600 text-white px-4 py-2 rounded shadow-md animate-slide-in z-[9999]">
-          ✅ Order placed successfully!
-        </div>
-      )}
     </>
   );
 };
