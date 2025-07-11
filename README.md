@@ -19,7 +19,17 @@ A simple and responsive single-page React e-commerce UI built using Vite, Tailwi
 
 📦 Clean and reusable component structure
 
-
+🧑‍💻 Getting Started
+1. Clone the repo
+bash:
+git clone https://github.com/your-username/react-ecommerce-frontend.git
+cd react-ecommerce-frontend
+2. Install dependencies
+bash:
+npm install
+3. Start the dev server
+bash:
+npm run dev
 
 Frontend runs at:
 ➡️ [http://localhost:5173](https://beamish-lebkuchen-6bf773.netlify.app/)
