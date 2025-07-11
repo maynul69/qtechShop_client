@@ -22,7 +22,7 @@ A simple and responsive single-page React e-commerce UI built using Vite, Tailwi
 
 
 Frontend runs at:
-➡️ http://localhost:5173
+➡️ [http://localhost:5173](https://beamish-lebkuchen-6bf773.netlify.app/)
 
 
 
